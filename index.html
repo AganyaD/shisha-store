@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Shisha Tobacco Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-phone="+972542309129">
+
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="res/12174668-uhd_3840_2160_50fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>טבק פרימיום לנרגילה </h1>
+        <p> WhatsApp - מבחר טעמים , להזמנה ב</p>
+    </header>
+
+    <section class="products">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="res/t1.png" alt="Flavor 1">
+            <h2>Flavor 1</h2>
+            <p class="price">$20</p>
+            <a href="#" class="buy-button" data-flavor="Flavor 1">Buy on WhatsApp</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="res/t2.png" alt="Flavor 2">
+            <h2>Flavor 2</h2>
+            <p class="price">$25</p>
+            <a href="#" class="buy-button" data-flavor="Flavor 2">Buy on WhatsApp</a>
+        </div>
+
+         <!-- Product 3 -->
+         <div class="product">
+            <img src="res/t3.png" alt="Flavor 3">
+            <h2>Flavor 2</h2>
+            <p class="price">$25</p>
+            <a href="#" class="buy-button" data-flavor="Flavor 2">Buy on WhatsApp</a>
+        </div>
+
+        <!-- Add more products as needed -->
+    </section>
+
+    <script>
+        // Set WhatsApp links dynamically based on the phone number and flavor
+        document.addEventListener("DOMContentLoaded", function() {
+            const phoneNumber = document.body.getAttribute("data-phone");
+            const buttons = document.querySelectorAll(".buy-button");
+
+            buttons.forEach(button => {
+                const flavor = button.getAttribute("data-flavor");
+                button.href = `https://wa.me/${phoneNumber}?text=I'm%20interested%20in%20buying%20the%20Premium%20Shisha%20Tobacco%20(${encodeURIComponent(flavor)})`;
+            });
+        });
+    </script>
+</body>
+</html>
